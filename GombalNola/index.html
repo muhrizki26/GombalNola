@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Kamu 💖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff0f5, #e0c3fc);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: center;
+    }
+    .page {
+      display: none;
+      font-size: 1.4em;
+      color: #8e44ad;
+      line-height: 1.6;
+    }
+    .active {
+      display: block;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      background-color: #d63384;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #ad296b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page active">MAKASI YA CANTIKKU UDAH SELALU SAMA AKU</div>
+    <div class="page">GABOLEE SEDII" YAA INGET AKU RUMAH KAMU</div>
+    <div class="page">AKU TAU JARAK KITA JAUH TAPI AKU TETAP SAYANG SAMA KAMU</div>
+    <div class="page">JANGAN LUPAIN AKU YA WALAU KITA GA ADA HUBUNGAN</div>
+    <div class="page">JAGA KESEHATAN MU, I MISS YOU SO MUCH 5000THOUSAND AND SARANGBEO 💖</div>
+    
+    <div class="buttons">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    let current = 0;
+
+    function showPage(index) {
+      pages.forEach((page, i) => {
+        page.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextPage() {
+      if (current < pages.length - 1) {
+        current++;
+        showPage(current);
+      }
+    }
+
+    function prevPage() {
+      if (current > 0) {
+        current--;
+        showPage(current);
+      }
+    }
+  </script>
+</body>
+</html>
